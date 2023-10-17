@@ -1,0 +1,17 @@
+name: Flask Web CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+    
+jobs:
+  python-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: action/setup-python@v2
+        with:
+          python-version: "3.8"
+      - run: python -c "print('hello world!')" # 파이썬으로 hello world! 출력
