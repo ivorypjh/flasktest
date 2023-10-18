@@ -10,6 +10,8 @@ jobs:
   python-hello:
     runs-on: ubuntu-latest
     steps:
+      # checkout 의 버전과 파이썬의 버전이 같아야 함(여기서는 v2)
+      # uses 의 모든 버전은 동일해야 할 듯 함
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
