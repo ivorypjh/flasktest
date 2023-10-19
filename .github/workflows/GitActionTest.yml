@@ -48,6 +48,7 @@ jobs:
           REPO: flaskwebtest
         # %REPO:latest 이름을 $NAME/$REPO:latest 로 수정
         # build 할 때 처음부터 이름을 $NAME/$REPO:latest 로 설정해도 됨
+        # |(파이프) 를 사용해서 순차적으로 실행되도록 설정
         run: |
           docker build -t $REPO .
           docker tag $REPO:latest $NAME/$REPO:latest
