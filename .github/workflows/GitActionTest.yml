@@ -38,7 +38,8 @@ jobs:
         with:
           username: whdgh
           # 이전의 토큰 사용
-          password: dckr_pat_WWQlq8ywG2VGhvfZueDgwYxmSzo
+          # 이후에는 토큰 대신 secret 을 사용하도록 수정
+          password: ${{secrets.ACCESSTOKEN}}
       - name: build and release
         # 환경 설정
         env: 
