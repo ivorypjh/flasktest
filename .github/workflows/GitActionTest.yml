@@ -21,4 +21,4 @@ jobs:
 
       # 출력이 아니라 수행할 내용으로 수정
       - run: pip install -r requirements.txt # 라이브러리 설치, txt 파일 필요함
-      - run : pytest # 테스트 수행 - pytest
+      - run: pytest # 테스트 수행 - pytest
