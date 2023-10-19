@@ -49,5 +49,5 @@ jobs:
         # build 할 때 처음부터 이름을 $NAME/$REPO:latest 로 설정해도 됨
         run: |
           docker build -t $REPO .
-          docker tag %REPO:latest $NAME/$REPO:latest
+          docker tag $REPO:latest $NAME/$REPO:latest
           docker push $NAME/$REPO:latest
