@@ -18,6 +18,7 @@ jobs:
       - run: pytest 
   # test 가 끝난 후 build 수행
   build:
+    # needs 는 의존성을 작성
     needs: [run-test-code]
     runs-on: ubuntu-latest
     steps:
