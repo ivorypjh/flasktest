@@ -1,4 +1,4 @@
-name: Flask Web CI
+name: Git Hub action test CI
 
 on:
   push:
@@ -10,10 +10,15 @@ jobs:
   python-hello:
     runs-on: ubuntu-latest
     steps:
-      # checkout 의 버전과 파이썬의 버전이 같아야 함(여기서는 v2)
-      # uses 의 모든 버전은 동일해야 할 듯 함
+      # step 의 checkout 까지는 변화가 없음
       - uses: actions/checkout@v2
+      
+      # 여기에서부터 사용하려는 개발 환경으로 수정해줘야 함
+      # 이번에는 파이썬을 사용하므로 동일
       - uses: actions/setup-python@v2
         with:
           python-version: "3.8"
-      - run: python -c "print('hello world!')" # 파이썬으로 hello world! 출력
+
+      # 출력이 아니라 수행할 내용으로 수정
+      - run: pip install -r requirements.txt # 라이브러리 설치, txt 파일 필요함
+      - run : pytest # 테스트 수행 - pytest
