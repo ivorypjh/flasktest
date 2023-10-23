@@ -19,6 +19,9 @@ jobs:
   # test 가 끝난 후 build 수행
   build:
     # needs 는 의존성을 작성
+    # needs 에는 아무 이름이나 작성하는게 아니라
+    # 위에서 사용한 jobs 이름을 적어줘야 함
+    # 설치가 먼저 된 다음에 실행되어야 하는 의존성을 가지기 때문임
     needs: [run-test-code]
     runs-on: ubuntu-latest
     steps:
